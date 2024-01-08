@@ -40,7 +40,7 @@ class InfoScreenVC: UIViewController {
                     self.addChildVC(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
                 }
             case .failure(let error):
-                presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+                self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
     }
