@@ -36,6 +36,7 @@
 		28B2B0C02B24BB3500A90CA9 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B2B0BF2B24BB3500A90CA9 /* GFEmptyStateView.swift */; };
 		28BE69F12B2C65CD00CFD555 /* InfoScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BE69F02B2C65CD00CFD555 /* InfoScreenVC.swift */; };
 		28C39A162B373D62003F6995 /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C39A152B373D62003F6995 /* GFItemInfoView.swift */; };
+		8230D25F2B4D2A960058DF25 /* GFItemInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8230D25E2B4D2A960058DF25 /* GFItemInfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		28B2B0BF2B24BB3500A90CA9 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 		28BE69F02B2C65CD00CFD555 /* InfoScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoScreenVC.swift; sourceTree = "<group>"; };
 		28C39A152B373D62003F6995 /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
+		8230D25E2B4D2A960058DF25 /* GFItemInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,7 @@
 			children = (
 				28AE348B2B13289400387B36 /* GFAlertVC.swift */,
 				28A15D072B336C8400C5F30F /* GFUserInfoHeaderVC.swift */,
+				8230D25E2B4D2A960058DF25 /* GFItemInfoVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				28A15D082B336C8400C5F30F /* GFUserInfoHeaderVC.swift in Sources */,
 				28AE34862B0C99A700387B36 /* FollowersListVC.swift in Sources */,
 				28AE348E2B13C77300387B36 /* UIViewController + Ext.swift in Sources */,
+				8230D25F2B4D2A960058DF25 /* GFItemInfoVC.swift in Sources */,
 				28A15D0A2B34DA3000C5F30F /* Constants.swift in Sources */,
 				28AE34802AFFE2B600387B36 /* FavoritesListVC.swift in Sources */,
 				28B2B0B82B20614D00A90CA9 /* UIHelper.swift in Sources */,
