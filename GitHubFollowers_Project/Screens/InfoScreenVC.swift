@@ -9,7 +9,7 @@ import UIKit
 
 class InfoScreenVC: UIViewController {
 
-    var username: String!
+    var username: String?
     let headerView = UIView()
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
@@ -32,12 +32,14 @@ class InfoScreenVC: UIViewController {
     
     
     func getUserInfo() {
-        NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
+        NetworkManager.shared.getUserInfo(for: username ?? "") { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let user):
                 DispatchQueue.main.async {
                     self.addChildVC(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
+                    self.addChildVC(childVC: GFRepoItemVC(user: user), to: self.itemViewOne)
+                    self.addChildVC(childVC: GFFollowerItemVC(user: user), to: self.itemViewTwo)
                 }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
@@ -66,9 +68,6 @@ class InfoScreenVC: UIViewController {
                 itemView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding)
             ])
         }
-        
-        itemViewOne.backgroundColor = .systemPink
-        itemViewTwo.backgroundColor = .systemBlue
         
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),

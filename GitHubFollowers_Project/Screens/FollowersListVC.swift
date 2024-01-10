@@ -11,7 +11,7 @@ class FollowersListVC: UIViewController {
     
     enum Section { case main }
     
-    var username: String!
+    var username: String?
     var followers: [Follower] = []
     var page: Int = 1
     var hasMoreFollowers: Bool = true
@@ -26,7 +26,7 @@ class FollowersListVC: UIViewController {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
-        getFollowers(username: username, page: page)
+        getFollowers(username: username ?? "", page: page)
         configureDataSource()
         configureSearchController()
     }
@@ -89,7 +89,7 @@ class FollowersListVC: UIViewController {
     
     func configureDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section,Follower>(collectionView: collectionView, cellProvider: { collectionView, indexPath, follower in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as? FollowerCell else { return UICollectionViewCell() }
             cell.set(follower: follower)
             return cell
         })
@@ -116,7 +116,7 @@ extension FollowersListVC: UICollectionViewDelegate {
         if offsetY > contentHeight - height {
             guard hasMoreFollowers else { return }
             page += 1
-            getFollowers(username: username, page: page)
+            getFollowers(username: username ?? "", page: page)
         }
     }
     

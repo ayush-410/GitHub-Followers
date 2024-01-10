@@ -16,9 +16,9 @@ class GFUserInfoHeaderVC: UIViewController {
     let locationLabel = GFSecondaryLabel(fontSize: 18)
     let bioLabel = GFBodyLabel(textAlignment: .left)
     
-    var user: User!
+    var user: User?
     
-    init(user: User!) {
+    init(user: User) {
         super.init(nibName: nil, bundle: nil)
         self.user = user
     }
@@ -37,12 +37,12 @@ class GFUserInfoHeaderVC: UIViewController {
     
     
     private func configureUI() {
-        avatarImageView.downloadAvatarImage(from: user.avatarUrl)
-        usernameLabel.text = user.login
-        nameLabel.text = user.name ?? ""
+        avatarImageView.downloadAvatarImage(from: user?.avatarUrl ?? "")
+        usernameLabel.text = user?.login
+        nameLabel.text = user?.name
         locationImageView.image = UIImage(systemName: SFSymbols.location)
-        locationLabel.text = user.location ?? "No Location"
-        bioLabel.text = user.bio ?? "No bio available"
+        locationLabel.text = user?.location ?? "No Location"
+        bioLabel.text = user?.bio ?? "No bio available"
         bioLabel.numberOfLines = 3
         locationImageView.tintColor = .secondaryLabel
     }
