@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol UserInfoVCDelegate: AnyObject {
+    
+    func didTapGitHubProfile(for user: User?)
+    func didTapGetFollowers(for user: User?)
+}
+
 class InfoScreenVC: UIViewController {
 
     var username: String?
@@ -14,6 +20,7 @@ class InfoScreenVC: UIViewController {
     let itemViewOne = UIView()
     let itemViewTwo = UIView()
     let dateLabel = GFBodyLabel(textAlignment: .center)
+    weak var delegate: FollowerListVCDelegate?
     var itemViews: [UIView] = []
     
     override func viewDidLoad() {
@@ -38,15 +45,27 @@ class InfoScreenVC: UIViewController {
             switch result {
             case .success(let user):
                 DispatchQueue.main.async {
-                    self.addChildVC(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
-                    self.addChildVC(childVC: GFRepoItemVC(user: user), to: self.itemViewOne)
-                    self.addChildVC(childVC: GFFollowerItemVC(user: user), to: self.itemViewTwo)
-                    self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
+                    self.configureUIElements(user: user)
                 }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
+    }
+    
+    
+    func configureUIElements(user:User) {
+        
+        let repoItemVC = GFRepoItemVC(user: user)
+        repoItemVC.delegate = self
+        
+        let followerItemVC = GFFollowerItemVC(user: user)
+        followerItemVC.delegate = self
+        
+        self.addChildVC(childVC: GFUserInfoHeaderVC(user: user), to: self.headerView)
+        self.addChildVC(childVC: repoItemVC, to: self.itemViewOne)
+        self.addChildVC(childVC: followerItemVC, to: self.itemViewTwo)
+        self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
     }
     
     
@@ -94,6 +113,29 @@ class InfoScreenVC: UIViewController {
         childVC.didMove(toParent: self)
     }
 
+}
+
+extension InfoScreenVC: UserInfoVCDelegate {
+    
+    func didTapGitHubProfile(for user: User?) {
+        
+        guard let url = URL(string: user?.htmlUrl ?? "") else {
+            self.presentGFAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "Ok")
+            return
+        }
+        showSafariVC(for: url)
+    }
+    
+    
+    func didTapGetFollowers(for user: User?) {
+        
+        guard user?.followers != 0 else {
+            presentGFAlertOnMainThread(title: "No Followers", message: "This user has no followers😢", buttonTitle: "So sad")
+            return
+        }
+        delegate?.getFollowersRequest(for: user?.login ?? "")
+        dismissVC()
+    }
 }
 
 
