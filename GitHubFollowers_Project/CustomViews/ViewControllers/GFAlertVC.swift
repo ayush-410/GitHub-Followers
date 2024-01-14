@@ -11,7 +11,7 @@ class GFAlertVC: UIViewController {
     
     
     let containerView = UIView()
-    let titleLabel = GFTitleLabel(textAlignment: .center, fontSize: 25)
+    let titleLabel = GFTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel = GFBodyLabel(textAlignment: .center)
     let actionButton = GFButton(backgroundColor: .systemPink, title: "OK")
 
@@ -71,7 +71,7 @@ class GFAlertVC: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
             titleLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
             titleLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
-            titleLabel.heightAnchor.constraint(equalToConstant: 20)
+            titleLabel.heightAnchor.constraint(equalToConstant: 25)
             
         ])
     }

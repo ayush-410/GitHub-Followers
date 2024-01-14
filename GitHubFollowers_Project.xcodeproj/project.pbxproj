@@ -41,6 +41,7 @@
 		823666AF2B50242400A73C11 /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823666AE2B50242400A73C11 /* String + Ext.swift */; };
 		823742ED2B4ED3B3004076EF /* GFRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823742EC2B4ED3B3004076EF /* GFRepoItemVC.swift */; };
 		823742EF2B4EE365004076EF /* GFFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823742EE2B4EE365004076EF /* GFFollowerItemVC.swift */; };
+		82831F4A2B5150C8002CA8B3 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82831F492B5150C8002CA8B3 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		823666AE2B50242400A73C11 /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
 		823742EC2B4ED3B3004076EF /* GFRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoItemVC.swift; sourceTree = "<group>"; };
 		823742EE2B4EE365004076EF /* GFFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemVC.swift; sourceTree = "<group>"; };
+		82831F492B5150C8002CA8B3 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				28AE349B2B15C50100387B36 /* NetworkManager.swift */,
+				82831F492B5150C8002CA8B3 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				823666AF2B50242400A73C11 /* String + Ext.swift in Sources */,
 				28AE349F2B170E8800387B36 /* GFError.swift in Sources */,
 				28AE348A2B1324D200387B36 /* GFBodyLabel.swift in Sources */,
+				82831F4A2B5150C8002CA8B3 /* PersistenceManager.swift in Sources */,
 				28AE34952B14BAA500387B36 /* Follower.swift in Sources */,
 				28AE34882B131ABA00387B36 /* GFTitleLabel.swift in Sources */,
 				28B2B0C02B24BB3500A90CA9 /* GFEmptyStateView.swift in Sources */,
