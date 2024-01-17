@@ -16,7 +16,7 @@ class FollowersListVC: UIViewController {
     
     enum Section { case main }
     
-    var username: String?
+    var username: String = ""
     var followers: [Follower] = []
     var page: Int = 1
     var hasMoreFollowers: Bool = true
@@ -27,11 +27,23 @@ class FollowersListVC: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
     
     
+    init(username: String) {
+        super.init(nibName: nil, bundle: nil)
+        self.username = username
+        title = username
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         configureCollectionView()
-        getFollowers(username: username ?? "", page: page)
+        getFollowers(username: username, page: page)
         configureDataSource()
         configureSearchController()
     }
@@ -116,7 +128,6 @@ class FollowersListVC: UIViewController {
     
     @objc func addBtnTapped() {
         showLoadingView()
-        guard let username = username else { return }
         NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
             guard let self else { return }
             self.dismissLoadingView()
@@ -149,7 +160,7 @@ extension FollowersListVC: UICollectionViewDelegate {
         if offsetY > contentHeight - height {
             guard hasMoreFollowers else { return }
             page += 1
-            getFollowers(username: username ?? "", page: page)
+            getFollowers(username: username, page: page)
         }
     }
     

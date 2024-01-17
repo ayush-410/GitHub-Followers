@@ -84,9 +84,7 @@ extension FavoritesListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favorite = favorites[indexPath.row]
-        let destVC = FollowersListVC()
-        destVC.username = favorite.login
-        destVC.title = favorite.login
+        let destVC = FollowersListVC(username: favorite.login)
         
         navigationController?.pushViewController(destVC, animated: true)
     }
@@ -103,6 +101,10 @@ extension FavoritesListVC: UITableViewDelegate, UITableViewDataSource {
             guard let self else { return }
             guard let error else { return }
             self.presentGFAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
+        }
+        
+        if favorites.isEmpty {
+            showEmptyStateView(with: "No Favorites?\nAdd one in the Followers screen")
         }
     }
 }
