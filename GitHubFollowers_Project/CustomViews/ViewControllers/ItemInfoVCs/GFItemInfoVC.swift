@@ -14,8 +14,7 @@ class GFItemInfoVC: UIViewController {
     let itemInfoViewTwo = GFItemInfoView()
     let actionBtn = GFButton()
     var user: User?
-    weak var delegate: UserInfoVCDelegate?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBackgroundView()
@@ -57,6 +56,7 @@ class GFItemInfoVC: UIViewController {
     
     
     @objc func actionBtnTapped() {}
+    
     
     private func layoutUI() {
         view.addSubview(stackView)

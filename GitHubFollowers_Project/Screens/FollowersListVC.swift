@@ -7,11 +7,6 @@
 
 import UIKit
 
-protocol FollowerListVCDelegate: AnyObject {
-    
-    func getFollowersRequest(for userName: String)
-}
-
 class FollowersListVC: GFDataLoadingVC {
     
     enum Section { case main }
