@@ -46,6 +46,7 @@
 		823742EF2B4EE365004076EF /* GFFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823742EE2B4EE365004076EF /* GFFollowerItemVC.swift */; };
 		826B698D2B53EEF9000B2DAE /* FavoritesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826B698C2B53EEF9000B2DAE /* FavoritesCell.swift */; };
 		82831F4A2B5150C8002CA8B3 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82831F492B5150C8002CA8B3 /* PersistenceManager.swift */; };
+		82EBDDE92B60274E00350087 /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EBDDE82B60274E00350087 /* UIView + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		823742EE2B4EE365004076EF /* GFFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemVC.swift; sourceTree = "<group>"; };
 		826B698C2B53EEF9000B2DAE /* FavoritesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCell.swift; sourceTree = "<group>"; };
 		82831F492B5150C8002CA8B3 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		82EBDDE82B60274E00350087 /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				28AE348D2B13C77300387B36 /* UIViewController + Ext.swift */,
 				823666AC2B500DE400A73C11 /* Date + Ext.swift */,
 				823666AE2B50242400A73C11 /* String + Ext.swift */,
+				82EBDDE82B60274E00350087 /* UIView + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				28AE34952B14BAA500387B36 /* Follower.swift in Sources */,
 				28AE34882B131ABA00387B36 /* GFTitleLabel.swift in Sources */,
 				28B2B0C02B24BB3500A90CA9 /* GFEmptyStateView.swift in Sources */,
+				82EBDDE92B60274E00350087 /* UIView + Ext.swift in Sources */,
 				28AE349C2B15C50100387B36 /* NetworkManager.swift in Sources */,
 				28AE347E2AFFE2A100387B36 /* SearchVC.swift in Sources */,
 				28AE344E2AFF7ED200387B36 /* AppDelegate.swift in Sources */,
