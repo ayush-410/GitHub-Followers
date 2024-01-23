@@ -14,13 +14,13 @@ class GFTextField: UITextField {
         configure()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     
     private func configure() {
-        
         translatesAutoresizingMaskIntoConstraints = false
         
         layer.cornerRadius = 10
@@ -38,7 +38,6 @@ class GFTextField: UITextField {
         autocorrectionType = .no
         returnKeyType = .go
         clearButtonMode = .whileEditing
-        
         placeholder = "Enter a username"
         
     }
