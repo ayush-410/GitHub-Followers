@@ -24,7 +24,7 @@ class GFFollowerItemVC: GFItemInfoVC {
     private func configureItems() {
         itemInfoViewOne.set(itemInfoType: .followers, withCount: user?.followers ?? 0)
         itemInfoViewTwo.set(itemInfoType: .following, withCount: user?.following ?? 0)
-        actionBtn.set(backgroundColor: .systemGreen, title: "Get Followers")
+        actionBtn.set(color: .systemGreen, title: "Get Followers", systemImageName: "person.3")
     }
     
     
