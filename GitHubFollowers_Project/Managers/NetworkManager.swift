@@ -35,7 +35,7 @@ class NetworkManager {
                 return
             }
             
-            guard let data = data else {
+            guard let data else {
                 completion(.failure(.invalidData))
                 return
             }
@@ -73,7 +73,7 @@ class NetworkManager {
                 return
             }
             
-            guard let data = data else {
+            guard let data else {
                 completion(.failure(.invalidData))
                 return
             }
